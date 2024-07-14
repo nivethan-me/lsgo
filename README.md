@@ -12,7 +12,7 @@
 ## Install as executable across operating system
 
 ```
-git clone https://github.com/nivethan-me/gols.git
+git clone https://github.com/nivethan-me/lsgo.git
 cd lsgo
 go install lsgo
 lsgo
