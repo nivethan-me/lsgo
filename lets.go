@@ -45,7 +45,7 @@ func main() {
 		if file.IsDir() {
 			tempNameString = fmt.Sprint(green + "󰉋 " + reset + file.Name() + "/")
 		} else if fileNameHasSuffix(".go") {
-			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
+			tempNameString = fmt.Sprint(cyan + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".md") {
 			tempNameString = fmt.Sprint(cyan + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".txt") {
@@ -55,11 +55,11 @@ func main() {
 		} else if fileNameHasSuffix(".sh") {
 			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".json") {
-			tempNameString = fmt.Sprint(white + "󰘦 " + reset + file.Name())
+			tempNameString = fmt.Sprint(magenta + "󰘦 " + reset + file.Name())
 		} else if fileNameHasSuffix(".java") {
 			tempNameString = fmt.Sprint(orange + "󰬷 " + reset + file.Name())
 		} else if fileNameHasSuffix(".mp3") {
-			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+			tempNameString = fmt.Sprint(cyan + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".py") {
 			tempNameString = fmt.Sprint(yellow + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".css") {
@@ -71,15 +71,17 @@ func main() {
 		} else if fileNameHasSuffix(".html") {
 			tempNameString = fmt.Sprint(orange + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".pdf") {
-			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+			tempNameString = fmt.Sprint(red + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".docx") {
-			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+			tempNameString = fmt.Sprint(green + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".jsx") {
-			tempNameString = fmt.Sprint(blue + "" + reset + file.Name())
+			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".tsx") {
 			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".cs") {
+			tempNameString = fmt.Sprint(blue + "󰌛 " + reset + file.Name())
 		} else {
-			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
+			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
 		}
 		output = append(output, tempNameString)
 
