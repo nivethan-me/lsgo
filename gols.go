@@ -17,16 +17,13 @@ var magenta = "\033[35m"
 var cyan = "\033[36m"
 var white = "\033[97m"
 var orange = red + yellow
+var separator = "|"
 
 func main() {
 	files, err := os.ReadDir(".")
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// fmt.Println(files)
-
-	filesPrinted := 0
 
 	output := []string{}
 
@@ -83,19 +80,17 @@ func main() {
 		} else {
 			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
 		}
-		output = append(output, tempNameString)
 
-		filesPrinted++
+		output = append(output, tempNameString)
 	}
-	// fmt.Println(output)
-	test := groupWithSeparator(output, "|")
-	// fmt.Println(test)
+
+	content := groupWithSeparator(output, separator)
 
 	config := columnize.DefaultConfig()
 	config.Glue = "\t\t"
 
-	result2 := columnize.Format(test, config)
-	fmt.Println(result2)
+	result := columnize.Format(content, config)
+	fmt.Println(result)
 }
 
 func groupWithSeparator(slice []string, separator string) []string {
@@ -106,8 +101,10 @@ func groupWithSeparator(slice []string, separator string) []string {
 			result = append(result, fmt.Sprintf("%s %s %s", item, separator, slice[i-1]))
 		}
 	}
+
 	if len(slice)%2 == 1 {
 		result = append(result, slice[len(slice)-1])
 	}
+
 	return result
 }
