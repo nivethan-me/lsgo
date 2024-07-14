@@ -1,5 +1,4 @@
-// module github.com/nivethan-me/letsgo
-module gols
+module lsgo
 
 go 1.22.2
 
