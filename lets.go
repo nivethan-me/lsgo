@@ -16,6 +16,7 @@ var blue = "\033[34m"
 var magenta = "\033[35m"
 var cyan = "\033[36m"
 var white = "\033[97m"
+var orange = red + yellow
 
 func main() {
 	files, err := os.ReadDir(".")
@@ -42,7 +43,7 @@ func main() {
 		var tempNameString string
 
 		if file.IsDir() {
-			tempNameString = fmt.Sprint(cyan + "󰉋 " + reset + blue + file.Name() + "/")
+			tempNameString = fmt.Sprint(green + "󰉋 " + reset + file.Name() + "/")
 		} else if fileNameHasSuffix(".go") {
 			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".md") {
@@ -55,6 +56,28 @@ func main() {
 			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
 		} else if fileNameHasSuffix(".json") {
 			tempNameString = fmt.Sprint(white + "󰘦 " + reset + file.Name())
+		} else if fileNameHasSuffix(".java") {
+			tempNameString = fmt.Sprint(orange + "󰬷 " + reset + file.Name())
+		} else if fileNameHasSuffix(".mp3") {
+			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".py") {
+			tempNameString = fmt.Sprint(yellow + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".css") {
+			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".js") {
+			tempNameString = fmt.Sprint(yellow + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".mp4") {
+			tempNameString = fmt.Sprint(red + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".html") {
+			tempNameString = fmt.Sprint(orange + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".pdf") {
+			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".docx") {
+			tempNameString = fmt.Sprint(white + " " + reset + file.Name())
+		} else if fileNameHasSuffix(".jsx") {
+			tempNameString = fmt.Sprint(blue + "" + reset + file.Name())
+		} else if fileNameHasSuffix(".tsx") {
+			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
 		} else {
 			tempNameString = fmt.Sprint(blue + " " + reset + file.Name())
 		}
